@@ -1,0 +1,41 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+E:\Shahab\Flutter and Dart\AppUp Competiton\appUp_one>flutter build apk --release --split-per-abi
+
+Building without sound null safety
+For more information see https://dart.dev/null-safety/unsound-null-safety
+
+Running Gradle task 'assembleRelease'...
+Parameter format not correct -
+
+Note: C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_sign_in-4.5.9\android\src\main\java\io\flutter\plugins\googlesignin\GoogleSignInPlugin.java uses or overrides a deprecated API.
+
+Note: Recompile with -Xlint:deprecation for details.
+
+Note: C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-0.7.0\android\src\main\java\io\flutter\plugins\firebase\core\FlutterFirebaseCorePlugin.java uses or overrides a deprecated API.
+
+Note: Recompile with -Xlint:deprecation for details.
+
+Note: C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-0.16.0+1\android\src\main\java\io\flutter\plugins\firebase\firestore\FlutterFirebaseFirestorePlugin.java uses or overrides a deprecated API.
+
+Note: Recompile with -Xlint:deprecation for details.
+
+Note: C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-0.16.0+1\android\src\main\java\io\flutter\plugins\firebase\firestore\streamhandler\TransactionStreamHandler.java uses unchecked or unsafe operations
+.
+
+Note: Recompile with -Xlint:unchecked for details.
+
+Note: C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-0.20.1\android\src\main\java\io\flutter\plugins\firebase\auth\FlutterFirebaseAuthPlugin.java uses or overrides a deprecated API.
+
+Note: Recompile with -Xlint:deprecation for details.
+
+WARNING: [Processor] Library 'C:\Users\Asus-PC\.gradle\caches\modules-2\files-2.1\org.robolectric\shadows-framework\4.3\150103d5732c432906f6130b734e7452855dd67b\shadows-framework-4.3.jar' contains references to both
+AndroidX and old support library. This seems like the library is partially migrated. Jetifier will try to rewrite the library anyway.
+
+ Example of androidX reference: 'androidx/test/runner/lifecycle/Stage'
+
+ Example of support library reference: 'android/support/annotation/NonNull'
+Running Gradle task 'assembleRelease'...                          466.0s
+v Built build\app\outputs\flutter-apk\app-armeabi-v7a-release.apk (7.4MB).
+
