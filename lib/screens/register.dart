@@ -14,6 +14,8 @@ class Register extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController ageController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
 
   Widget build(BuildContext context) {
 
@@ -26,10 +28,12 @@ class Register extends StatelessWidget {
       final String email = emailController.text;
       final String password = passwordController.text;
       final String age = ageController.text;
+      final String phone = phoneController.text;
+      final String address = addressController.text;
 
       try  {
         final UserCredential user = await auth.createUserWithEmailAndPassword(email: email, password: password);
-        await db.collection("users").doc(user.user.uid).set({"Email": email, "Username": username, "Age": age});
+        await db.collection("users").doc(user.user.uid).set({"Email": email, "Username": username, "Age": age , "Phone" : phone, "Address" : address,});
         print("Email :" + email);
         print("Username :" + username);
         print("Age :" + age);
@@ -39,6 +43,7 @@ class Register extends StatelessWidget {
       }
       catch(e){
         print("**** ERROR ****");
+        print(e);
       }
 
     }
@@ -68,7 +73,7 @@ class Register extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 20.0, bottom: 20),
                 alignment: Alignment.center,
-                child: Text("ONLINE STORE" , style: TextStyle(fontSize: 22.0, color: kactiveCardColor , fontWeight: FontWeight.bold),),
+                child: Text("ONLINE STORE" , style: TextStyle( letterSpacing:  1.8 ,fontSize: 24.0, color: kactiveCardColor , fontWeight: FontWeight.bold),),
               ),
 
 
@@ -113,7 +118,7 @@ class Register extends StatelessWidget {
 
 // Phone no
               InputField(
-                // controller: ,
+                controller: phoneController ,
                 keyboardType: TextInputType.number,
                 labelText: "Phone",
                 hide: false,
@@ -122,7 +127,7 @@ class Register extends StatelessWidget {
 
  // Address
               InputField(
-                // controller: ,
+                controller: addressController,
                 keyboardType: TextInputType.streetAddress,
                 prefixicon: FontAwesomeIcons.addressBook,
                 hide: false,
