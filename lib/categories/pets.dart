@@ -2,35 +2,37 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';
+import 'package:firebase_practice/screens/home.dart';
+import 'package:firebase_practice/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'home.dart';
-import 'login.dart';
 
-class Fash extends StatefulWidget {
+import 'elec.dart';
+
+class Pets extends StatefulWidget {
   @override
-  State<Fash> createState() => _FashState();
+  State<Pets> createState() => _PetsState();
 }
 
-class _FashState extends State<Fash> {
+class _PetsState extends State<Pets> {
   var itemPics = [
-    "https://cdn.edenrobe.com/media/catalog/product/cache/4fa8627ad3552d906aaca1ac84f49d9c/0/n/0n9a2777-emtps22-020.jpg",
-    "https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg",
-    "https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?cs=srgb&dl=pexels-pixabay-267301.jpg&fm=jpg",
-    "https://thumbs.dreamstime.com/b/blue-jeans-isolated-white-34440719.jpg",
-    "https://image.shutterstock.com/image-photo/baseball-cap-isolated-on-white-260nw-610601909.jpg",
-    "https://image.made-in-china.com/202f0j00aocfdbgKEkqv/Ready-to-Ship-Latest-Design-Groom-Wedding-Pictures-Men-s-Coat-Pant-Designs-Wedding-Suit-Made-in-China.jpg"
+    "https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/10_October/persians/Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min.jpg",
+    "https://www.purina.co.nz/sites/default/files/styles/ttt_image_510/public/2021-01/Persian%20Long%20Hair.1.jpg?itok=vxUPA23O",
+    "https://www.petsmall.pk/wp-content/uploads/2019/05/img_3669.jpg",
+    "https://www.petcity.pk/wp-content/uploads/2019/06/me-o-tin.jpg",
+    "https://canary.contestimg.wish.com/api/webimage/5de8ae52c7b07c2e8219440e-large.jpg?cache_buster=f2761b9ed6a4c474b6c569861a78081a",
+    "https://media.istockphoto.com/photos/cat-food-bowl-picture-id181896077"
   ];
 
   var itemNames = [
-    "Polo Shirt",
-    "Wristwatch",
-    "Shoes",
-    "Denum Jeans",
-    "Cap",
-    "Suit"
+    "Persian Cat White",
+    "Perisan Cat Orange",
+    "Bioline Cat Shampoo",
+    "Me O Catfood",
+    "Cat Collars",
+    "Catfood Bowl"
   ];
 
   var itemReviews = [
@@ -63,7 +65,7 @@ class _FashState extends State<Fash> {
 
           title: Center(
               child: Text(
-            "Fashion",
+            "Pets",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           )),
           actions: [
@@ -120,9 +122,9 @@ class _FashState extends State<Fash> {
                 leading: Icon(
                   FontAwesomeIcons.shirt,color: kactiveCardColor,
                 ),
-                title: Text("Fashion"),
+                title: Text("Elecion"),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Fash()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Elec()));
                 },
               ),
               
@@ -217,14 +219,14 @@ class _FashState extends State<Fash> {
                               fit: BoxFit.fill,
                               alignment: Alignment(0, 0),
                               image: NetworkImage(
-                                  "https://cdn.mos.cms.futurecdn.net/B9aLfh58bFD4w4REnN5q7G.jpg"),
+                                  "https://static.onecms.io/wp-content/uploads/sites/47/2022/01/11/cat-collars-2000.jpg"),
                             ),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(top: 10),
                             child: Text(
-                              "Fathers Day Special",
+                              "Cat Collars Everywhere",
                               style: TextStyle(fontSize: 18),
                             )),
                         Row(
@@ -276,14 +278,14 @@ class _FashState extends State<Fash> {
                               fit: BoxFit.fill,
                               alignment: Alignment(0, 0),
                               image: NetworkImage(
-                                  "https://img.freepik.com/free-vector/pair-leather-sports-shoes-wood-background_1284-17526.jpg?w=2000"),
+                                  "https://img.freepik.com/premium-psd/cat-food-promotion-social-media-template_263625-142.jpg?w=2000"),
                             ),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(top: 10),
                             child: Text(
-                              "Nike Shoes",
+                              "Project Cat Food",
                               style: TextStyle(fontSize: 18),
                             )),
                         Row(
@@ -340,14 +342,14 @@ class _FashState extends State<Fash> {
                               fit: BoxFit.fill,
                               alignment: Alignment(0, 0),
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/85/89/ee/8589ee871af24d3d66b52a2be6eb7eba.jpg"),
+                                  "https://www.whiskas.me/areas/en/assets/img/home/irresistibleTaste.jpg"),
                             ),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(top: 10),
                             child: Text(
-                              "Shalwar Kameez",
+                              "Irresistible Taste",
                               style: TextStyle(fontSize: 18),
                             )),
                         Row(
@@ -384,364 +386,6 @@ class _FashState extends State<Fash> {
                       ],
                     ),
 
-                    //4th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/suit-sale-video-ad-design-template-78616d0f45bc752096797eab567100e3.jpg?ts=1632689844"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Suit Offers ",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   4.0")
-                            ]),
-                        Text("(22 Reviews)")
-                      ],
-                    ),
-
-                    //5th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://i.ytimg.com/vi/2JbhsIuFv48/maxresdefault.jpg"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Shirt & Life",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   5.0")
-                            ]),
-                        Text("(63 Reviews)")
-                      ],
-                    ),
-
-                    //6th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://image.shutterstock.com/image-vector/quote-tshirt-coffee-comes-brilliant-260nw-1858968316.jpg"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Even More Tshirts",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   3.0")
-                            ]),
-                        Text("(59 Reviews)")
-                      ],
-                    ),
-
-                    //7th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/retail-sale-jeans-template-design-0869fbbe0cf85fc470f9217bbe9e030b_screen.jpg?ts=1561378520"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Jeans Rules",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   4.0")
-                            ]),
-                        Text("(142 Reviews)")
-                      ],
-                    ),
-
-                    //8th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2nJ9tJIor1wa8bLRNLus-IS8hGNGD9e_gQ&usqp=CAU"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Western Clothing",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   3.5")
-                            ]),
-                        Text("(17 Reviews)")
-                      ],
-                    ),
-
-                    //9th Image of Slider
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 0.5,
-                          height: MediaQuery.of(context).size.height / 3.8,
-                          margin: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              alignment: Alignment(0, 0),
-                              image: NetworkImage(
-                                  "https://www.stylostreet.com/wp-content/uploads/2019/10/khaadi-pet-colors.png"),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Text(
-                              "Khaddi Offers",
-                              style: TextStyle(fontSize: 18),
-                            )),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 18,
-                              ),
-                              Text("   5.0")
-                            ]),
-                        Text("(33 Reviews)")
-                      ],
-                    ),
                   ],
 
                   //Slider Container properties

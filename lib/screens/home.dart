@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_practice/categories/fash.dart';
 import 'package:firebase_practice/components/conatiners.dart';
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'fash.dart';
 import 'login.dart';
 
 
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
   }
 
     var itemPics = [
-    "https://www.brandsynario.com/wp-content/uploads/yamaha1.jpg",
+    "https://driver.pk/wp-content/uploads/2016/08/Yamaha-YBR-125-2017.jpg",
     "https://cdn.pocket-lint.com/r/s/1200x/assets/images/151989-phones-vs-moto-g8-vs-g8-power-vs-g8-plus-whats-the-difference-image1-i14zubfech.jpg",
     "https://5.imimg.com/data5/QR/KO/KS/SELLER-9321582/asus-rog-gaming-laptop-strix-gl503ge-en268t-500x500.jpg",
     "https://www.prodirectcricket.com/productimages/Main/149268.jpg",
