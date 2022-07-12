@@ -1,15 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_practice/components/conatiners.dart';
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'data.dart';
 import 'fash.dart';
 import 'login.dart';
+
+
 
 class Home extends StatefulWidget {
 
@@ -20,17 +22,55 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-
   List<String> _options = ["/home", "/login", "/home", "/check", "/home"];
   int _currentIndex = 2;
+
+  final firestore = FirebaseFirestore.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   Stream chatsStream = FirebaseFirestore.instance.collection('chats').snapshots();
 
   Stream usersStream = FirebaseFirestore.instance.collection('users').snapshots();
 
+
   @override
 
-  var itemPics = [
+  Future<String> getUserName() async {					// Function name
+    final CollectionReference users = firestore.collection('users'); 	// collection name
+    final String uid = auth.currentUser.uid;
+    final result = await users.doc(uid).get();
+    return result.data()['Username']; 					 // Field Name
+  }
+
+  Future<String> getEmail() async {
+    final CollectionReference users = firestore.collection('users'); 	// collection name
+    final String uid = auth.currentUser.uid;
+    final result = await users.doc(uid).get();
+    return result.data()['Email'];
+  }
+
+  Future<String> getAge() async {
+    final CollectionReference users = firestore.collection('users'); 	// collection name
+    final String uid = auth.currentUser.uid;
+    final result = await users.doc(uid).get();
+    return result.data()['Age'];
+  }
+
+  Future<String> getPhone() async {
+    final CollectionReference users = firestore.collection('users'); 	// collection name
+    final String uid = auth.currentUser.uid;
+    final result = await users.doc(uid).get();
+    return result.data()['Phone'];
+  }
+
+  Future<String> getAddress() async {
+    final CollectionReference users = firestore.collection('users'); 	// collection name
+    final String uid = auth.currentUser.uid;
+    final result = await users.doc(uid).get();
+    return result.data()['Address'];
+  }
+
+    var itemPics = [
     "https://www.brandsynario.com/wp-content/uploads/yamaha1.jpg",
     "https://cdn.pocket-lint.com/r/s/1200x/assets/images/151989-phones-vs-moto-g8-vs-g8-power-vs-g8-plus-whats-the-difference-image1-i14zubfech.jpg",
     "https://5.imimg.com/data5/QR/KO/KS/SELLER-9321582/asus-rog-gaming-laptop-strix-gl503ge-en268t-500x500.jpg",
@@ -71,6 +111,8 @@ class _HomeState extends State<Home> {
     }
 
 
+
+
     return Scaffold(
       // backgroundColor: Colors.grey[600],
       appBar: AppBar(
@@ -78,11 +120,11 @@ class _HomeState extends State<Home> {
         brightness: Brightness.dark,
         elevation: 10,
 
-        title: Center(
-            child: Text(
-              "Online Store",
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            )),
+        title:
+        Center(
+            child: Text("Online Store", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+        ),
         actions: [
           FlatButton(
               padding: EdgeInsets.only(left: 50),
@@ -94,31 +136,30 @@ class _HomeState extends State<Home> {
 
       drawer: Drawer(
 
-        child: ListView(
+        child:ListView(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
-          // Important: Remove any padding from the ListView.
+// Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+         DrawerHeader(
 
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage("https://img.freepik.com/premium-vector/dark-green-ray-burst-background_1164-1709.jpg",) , fit: BoxFit.cover, ),
-                // color: kactiveCardColor,
-              ),
-              child: Column(
-                children: [
-                  SizedBox( height: 100, width: 100,
-                      child: Image.asset("assets/logo.png",  )),
-                ],
-              ),
-            ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage("https://img.freepik.com/premium-vector/dark-green-ray-burst-background_1164-1709.jpg",) , fit: BoxFit.cover, ),
+              // color: kactiveCardColor,
+          ),
+          child: Column(
+            children: [
+              SizedBox( height: 100, width: 100,
+                  child: Image.asset("assets/logo.png",  )),
+            ],
+          ),
+        ),
+
 
             ListTile(
-              // leading: Icon(
-              //   FontAwesomeIcons.circleDot,
-              // ),
+
               title: Text("Profile Details".toUpperCase(),textAlign: TextAlign.center ,style: TextStyle(fontSize: 22.0, color: kBMRactiveCardColor, fontWeight: FontWeight.bold),),
               onTap: () {
                 Navigator.pop(context);
@@ -129,28 +170,30 @@ class _HomeState extends State<Home> {
 
 
             ListTile(
-              leading: Icon( FontAwesomeIcons.user, color: kactiveCardColor,),
-              title: Text("Username"),
+              leading: Icon( FontAwesomeIcons.solidUser, color: kactiveCardColor,),
+
+              title: FBData(function: getUserName(),),
+
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-            // Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
+// Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
 
-
-            ListTile(
-              leading: Icon(FontAwesomeIcons.calendarDays, color: kactiveCardColor,),
-              title: Text("22"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-
-            // Divider(height: 0.5,thickness: 1.0, color: kactiveCardColor,),
 
             ListTile(
               leading: Icon(Icons.mail, color: kactiveCardColor,),
-              title: Text("User@gmail.com"),
+              title: FBData(function: getEmail(),),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+
+// Divider(height: 0.5,thickness: 1.0, color: kactiveCardColor,),
+
+            ListTile(
+              leading: Icon(FontAwesomeIcons.calendarDays, color: kactiveCardColor,),
+              title: FBData(function: getAge(),),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -158,15 +201,15 @@ class _HomeState extends State<Home> {
 
             ListTile(
               leading: Icon(Icons.phone, color: kactiveCardColor,),
-              title: Text("0311000000"),
+              title: FBData(function: getPhone(),),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
 
             ListTile(
-              leading: Icon(FontAwesomeIcons.addressBook, color: kactiveCardColor,),
-              title: Text("Address"),
+              leading: Icon(FontAwesomeIcons.locationDot, color: kactiveCardColor,),
+              title: FBData(function: getAddress(),),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -174,14 +217,20 @@ class _HomeState extends State<Home> {
 
             SizedBox(height: 70,),
 
-            Text("Terms of Service | Privacy Policy" , textAlign: TextAlign.center , style: TextStyle(color: Colors.grey, fontSize: 12),)
+            Text("Terms of Service | Privacy Policy" , textAlign: TextAlign.center , style: TextStyle(color: Colors.grey, fontSize: 12),),
+
           ],
         ),
+
+
       ),
 
 
 
       body:   ListView(children: [
+
+
+        
         ListTile(
           contentPadding: EdgeInsets.symmetric(horizontal: 10),
           leading: Text(

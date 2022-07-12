@@ -24,6 +24,10 @@ class Register extends StatelessWidget {
       FirebaseAuth auth = FirebaseAuth.instance;
       FirebaseFirestore db = FirebaseFirestore.instance;
 
+      // final FirebaseUser user = await auth.currentUser();
+      final User users = auth.currentUser;
+      final uid = users.uid;
+
       final String username = usernameController.text;
       final String email = emailController.text;
       final String password = passwordController.text;
@@ -34,6 +38,7 @@ class Register extends StatelessWidget {
       try  {
         final UserCredential user = await auth.createUserWithEmailAndPassword(email: email, password: password);
         await db.collection("users").doc(user.user.uid).set({"Email": email, "Username": username, "Age": age , "Phone" : phone, "Address" : address,});
+
         print("Email :" + email);
         print("Username :" + username);
         print("Age :" + age);
@@ -47,6 +52,7 @@ class Register extends StatelessWidget {
       }
 
     }
+
     final _h = MediaQuery.of(context).size.height ;
     final _w = MediaQuery.of(context).size.width ;
 

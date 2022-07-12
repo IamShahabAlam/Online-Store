@@ -288,3 +288,26 @@ class Guide_List extends StatelessWidget {
 
    }
 }
+
+// ===================================================================
+
+
+ class FBData extends StatelessWidget {
+
+  FBData({this.function});
+  final dynamic function;
+
+   @override
+   Widget build(BuildContext context) {
+     return FutureBuilder(
+       future: function,                               // Calling Function name
+       builder: (_ , AsyncSnapshot snapshot){
+
+         if(snapshot.connectionState == ConnectionState.waiting){
+           return Center( child: CircularProgressIndicator());
+         }
+         return Text(snapshot.data); 			 // this holds the data
+       },
+     );
+   }
+ }
