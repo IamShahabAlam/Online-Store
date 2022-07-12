@@ -10,7 +10,7 @@ import 'register.dart';
 class Login extends StatelessWidget {
   @override
 
-  final TextEditingController emailController = TextEditingController(text: "qwer@gmail.com");
+  final TextEditingController emailController = TextEditingController(text: "test@gmail.com");
   final TextEditingController passwordController = TextEditingController(text: "qwerty");
 
   Widget build(BuildContext context) {
