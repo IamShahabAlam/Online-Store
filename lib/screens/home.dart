@@ -71,19 +71,26 @@ class _HomeState extends State<Home> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+             DrawerHeader(
 
               decoration: BoxDecoration(
-                color: kactiveCardColor,
+                image: DecorationImage(
+                  image: NetworkImage("https://img.freepik.com/premium-vector/dark-green-ray-burst-background_1164-1709.jpg",) , fit: BoxFit.cover, ),
+                // color: kactiveCardColor,
               ),
-              child: Text('PROFILE'),
+              child: Column(
+                children: [
+                  SizedBox( height: 100, width: 100,
+                      child: Image.asset("assets/logo.png",  )),
+                ],
+              ),
             ),
 
             ListTile(
               // leading: Icon(
               //   FontAwesomeIcons.circleDot,
               // ),
-              title: Text("Profile Details", style: TextStyle(fontSize: 25.0),),
+              title: Text("Profile Details".toUpperCase(),textAlign: TextAlign.center ,style: TextStyle(fontSize: 22.0, color: kBMRactiveCardColor, fontWeight: FontWeight.bold),),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -93,40 +100,50 @@ class _HomeState extends State<Home> {
 
 
             ListTile(
-              leading: Icon(
-                FontAwesomeIcons.user,
-              ),
+              leading: Icon( FontAwesomeIcons.user, color: kactiveCardColor,),
               title: Text("Username"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-            Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
+            // Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
 
 
             ListTile(
-              leading: Icon(
-                FontAwesomeIcons.babyCarriage,
-              ),
+              leading: Icon(FontAwesomeIcons.calendarDays, color: kactiveCardColor,),
               title: Text("22"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
 
-            Divider(height: 0.5,thickness: 1.0, color: kactiveCardColor,),
+            // Divider(height: 0.5,thickness: 1.0, color: kactiveCardColor,),
 
             ListTile(
-              leading: Icon(
-                Icons.mail,
-              ),
+              leading: Icon(Icons.mail, color: kactiveCardColor,),
               title: Text("User@gmail.com"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-            
-            SizedBox(height: 160,),
+
+            ListTile(
+              leading: Icon(Icons.phone, color: kactiveCardColor,),
+              title: Text("0311000000"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+
+            ListTile(
+              leading: Icon(FontAwesomeIcons.addressBook, color: kactiveCardColor,),
+              title: Text("Address"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+
+            SizedBox(height: 70,),
             
             Text("Terms of Service | Privacy Policy" , textAlign: TextAlign.center , style: TextStyle(color: Colors.grey, fontSize: 12),)
           ],
