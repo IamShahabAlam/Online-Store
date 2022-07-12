@@ -134,7 +134,7 @@ class Login extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () => launch("https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAAQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"),
-                    child: Container( margin: EdgeInsets.only(top: 20, bottom: 15),
+                    child: Container( margin: EdgeInsets.only(top: 20, bottom: 20),
                       padding: EdgeInsets.all(5),
                       height: 60, width: 160,
                       decoration: BoxDecoration(
@@ -150,8 +150,8 @@ class Login extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () => launch("https://m.facebook.com/"),
-                    child: Container( margin: EdgeInsets.only(top: 20, bottom: 15),
-                      padding: EdgeInsets.all(10),
+                    child: Container( margin: EdgeInsets.only(top: 20, bottom: 20),
+                      padding: EdgeInsets.all(12),
                       height: 60, width: 160,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -167,11 +167,11 @@ class Login extends StatelessWidget {
 
               Row( mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("I don't have an account ", style:  TextStyle(color: Colors.grey, fontSize: 18),),
+                  Text("I don't have an account ", style:  TextStyle(color: Colors.grey, fontSize: 16),),
 
                   GestureDetector(
                       onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => Register()) );},
-                      child: Text("Sign Up", style: TextStyle(color: kBMRactiveCardColor,fontWeight: FontWeight.bold, fontSize: 18.0),))
+                      child: Text("Sign Up", style: TextStyle(color: kBMRactiveCardColor,fontWeight: FontWeight.bold, fontSize: 16.0),))
                 ],
               )
             ],
@@ -208,7 +208,7 @@ class InputField extends StatelessWidget {
         keyboardType: keyboardType,
         decoration: InputDecoration(
             labelText: labelText,
-            labelStyle: TextStyle(fontSize: 17.0, color: kBMRactiveCardColor),
+            labelStyle: TextStyle(fontSize: 17.0, color: kBMRactiveCardColor.withOpacity(0.4)),
             floatingLabelBehavior: FloatingLabelBehavior.auto,
             contentPadding: EdgeInsets.all(10),
             prefixIcon: Icon(prefixicon, color: kactiveCardColor,),
@@ -221,96 +221,3 @@ class InputField extends StatelessWidget {
 }
 
 
-
-
-//
-// Scaffold(
-// appBar: AppBar( backgroundColor: Colors.yellow[600], title: Center(child: Text("Login Page")) ,),
-// body:
-// SingleChildScrollView(
-// child: Column(
-// children: [
-//
-//
-// Center(
-// child: Container( width: MediaQuery.of(context).size.width/1.2, padding: EdgeInsets.only(top:20),
-// child: TextField(cursorColor: Colors.yellow,
-// keyboardType: TextInputType.emailAddress,
-// controller: emailController ,
-// decoration: InputDecoration(
-// hintText: ("Enter Email"),
-// labelText: ("Email"),
-// labelStyle: TextStyle(color: Colors.yellow[700], ),
-// focusColor: Colors.yellow,
-// filled: true,
-// fillColor: Colors.yellow[50],
-// enabledBorder: OutlineInputBorder(
-// borderSide: BorderSide(color: Colors.yellow[600])
-// ) ,
-// border: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25),
-// borderSide: BorderSide(color: Colors.red, width: 10)),
-// focusedBorder: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25),
-// borderSide: BorderSide(color: Colors.yellow,width: 2, )),
-//
-// ),),
-//
-// ),
-// ),
-//
-//
-// Center(
-// child: Container( width: MediaQuery.of(context).size.width/1.2, padding: EdgeInsets.only(top:20),
-// child: TextField(cursorColor: Colors.yellow,
-// keyboardType: TextInputType.visiblePassword,
-// controller: passwordController ,
-// decoration: InputDecoration(
-// hintText: ("Enter Password"),
-// labelText: ("Password"),
-// labelStyle: TextStyle(color: Colors.yellow[700], ),
-// focusColor: Colors.yellow,
-// filled: true,
-// fillColor: Colors.yellow[50],
-// enabledBorder: OutlineInputBorder(
-// borderSide: BorderSide(color: Colors.yellow[600])
-// ) ,
-// border: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25),
-// borderSide: BorderSide(color: Colors.red, width: 10)),
-// focusedBorder: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(25),
-// borderSide: BorderSide(color: Colors.yellow,width: 2, )),
-//
-// ),),
-//
-// ),
-// ),
-//
-//
-//
-// Container( width: 100, padding: EdgeInsets.only(top:15),
-// child: DecoratedBox(decoration: BoxDecoration(
-// boxShadow: [
-// BoxShadow(
-// color: Colors.grey[400],
-// spreadRadius: 2,
-// blurRadius: 8,
-// offset: Offset(2, 2)
-// )
-// ],
-// borderRadius: BorderRadius.circular(25) ,
-// gradient: LinearGradient(colors: [Colors.orange,Colors.yellow[600]])
-// ),child:
-// ElevatedButton( style: ElevatedButton.styleFrom(
-// primary: Colors.transparent, shadowColor: Colors.transparent  ),
-// onPressed: login, child: Text("Login")),
-// ),
-// ),
-//
-//
-// ],
-// ),
-// ) ,
-//
-// );
