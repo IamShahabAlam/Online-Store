@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
     "(02 Reviews)",
     "(39 Reviews)",
     "(04 Reviews)",
-    "(110 Reviews)"
+    "(21 Reviews)"
   ];
 
 

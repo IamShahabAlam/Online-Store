@@ -37,7 +37,7 @@ class _BNBState extends State<BNB> {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         // Dependency
-        // animationDuration: Duration(seconds: 1),
+        animationDuration: Duration(milliseconds: 200),
         // animationCurve: Curves.easeInBack,
         key: _bottomNavigationKey,
         index: _currentIndex,
