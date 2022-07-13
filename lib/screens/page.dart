@@ -1,7 +1,13 @@
+
+
+// UNDER CONSTRUCTION
+
+
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_practice/components/constants.dart';
-import 'package:firebase_practice/screens/check.dart';
+import 'package:appUp_one/components/constants.dart';
+import 'package:appUp_one/screens/check.dart';
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

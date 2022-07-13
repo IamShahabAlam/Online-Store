@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_practice/screens/last.dart';
+import 'package:appUp_one/screens/last.dart';
 import 'package:flutter/material.dart';
 
 import 'login.dart';

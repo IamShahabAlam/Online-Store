@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_practice/categories/bikes.dart';
-import 'package:firebase_practice/categories/elec.dart';
-import 'package:firebase_practice/categories/fash.dart';
-import 'package:firebase_practice/categories/mob.dart';
-import 'package:firebase_practice/categories/others.dart';
-import 'package:firebase_practice/categories/pets.dart';
+import 'package:appUp_one/categories/bikes.dart';
+import 'package:appUp_one/categories/elec.dart';
+import 'package:appUp_one/categories/fash.dart';
+import 'package:appUp_one/categories/mob.dart';
+import 'package:appUp_one/categories/others.dart';
+import 'package:appUp_one/categories/pets.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import 'package:firebase_practice/components/constants.dart';
-import 'package:firebase_practice/screens/check.dart';
+import 'package:appUp_one/components/constants.dart';
+import 'package:appUp_one/screens/check.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

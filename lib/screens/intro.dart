@@ -1,5 +1,5 @@
-import 'package:firebase_practice/components/buttons.dart';
-import 'package:firebase_practice/components/constants.dart';
+import 'package:appUp_one/components/buttons.dart';
+import 'package:appUp_one/components/constants.dart';
 import 'register.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

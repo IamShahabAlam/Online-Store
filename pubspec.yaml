@@ -1,4 +1,4 @@
-name: firebase_practice
+name: appUp_one
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -41,6 +41,13 @@ dependencies:
   curved_navigation_bar: ^1.0.1
   url_launcher: ^5.7.10
   cupertino_icons: ^1.0.5
+  firebase_messaging: ^6.0.16
+  flutter_local_notifications: ^4.0.1+2
+  flutter_rating_bar: ^3.2.0+1
+  comment_box: ^0.0.15
+  favorite_button: ^0.0.4
+  pimp_my_button: ^1.0.0
+
 
 
 

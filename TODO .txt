@@ -1,0 +1,10 @@
+TO DO 
+
+- INTEGRATION OF PAGES.
+- FEEDBACK RATING (from profile to Checkout).
+- FeedBack User Image Issue
+- Profile Page Setup .
+- WishList Button to all Products.
+- Color Gradient Button of new Pages.
+- Main Screen Product Apply Gesture Detector.
+- Apply pimp_my_button Package where suitable. (Profile Details and Fav Icon)
