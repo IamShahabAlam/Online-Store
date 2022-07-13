@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice/categories/mob.dart';
 import 'package:firebase_practice/categories/pets.dart';
 import 'package:firebase_practice/components/constants.dart';
+import 'package:firebase_practice/components/navBar.dart';
 import 'package:firebase_practice/screens/check.dart';
 import 'package:firebase_practice/screens/home.dart';
 import 'package:firebase_practice/screens/login.dart';
@@ -123,7 +124,7 @@ class _OthersState extends State<Others> {
               title: Text("Home"),
               trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BNB()));
               },
             ),
 

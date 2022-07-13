@@ -4,6 +4,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_practice/screens/category.dart';
 import 'package:firebase_practice/screens/intro.dart';
 import 'package:firebase_practice/screens/login.dart';
+import 'package:firebase_practice/screens/profile.dart';
 import 'package:firebase_practice/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -84,7 +85,7 @@ class MyApp extends StatelessWidget {
                 "/intro" : (context) => Intro(),
                 "/nav" : (context) => BNB(),
                 "/cate" : (context) => Cate(),
-                "/profile" : (context) => Home(),
+                "/prof" : (context) => Profile(),
 
 
               } 
