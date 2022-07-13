@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_practice/components/constants.dart';
+import 'package:firebase_practice/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -16,7 +17,7 @@ class _BNBState extends State<BNB> {
 
   int _currentIndex = 1;
 
-  final screens = [Cate(), Home(), Intro()];
+  final screens = [Cate(), Home(), Profile()];
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
 
