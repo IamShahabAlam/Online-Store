@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_practice/categories/mob.dart';
+import 'package:firebase_practice/categories/pets.dart';
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';
 import 'package:firebase_practice/screens/home.dart';
@@ -8,8 +10,10 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'bikes.dart';
 import 'elec.dart';
+import 'fash.dart';
+import 'others.dart';
 
 class Others extends StatefulWidget {
   @override
@@ -79,100 +83,144 @@ class _OthersState extends State<Others> {
 
         // ===========================================================
 
-        drawer: Drawer(
+      drawer: Drawer(
+        child: ListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
 
-          child: ListView(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-
-                decoration: BoxDecoration(
-                  color: kactiveCardColor,
-                ),
-                child: Text('MENU', style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.bold),),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage("https://img.freepik.com/premium-vector/dark-green-ray-burst-background_1164-1709.jpg",) , fit: BoxFit.cover, ),
+                // color: kactiveCardColor,
               ),
-
-              ListTile(
-                // leading: Icon(
-                //   FontAwesomeIcons.circleDot,
-                // ),
-                title: Text("CATEGORIES", style: TextStyle(fontSize: 25.0),),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              child: Column(
+                children: [
+                  SizedBox( height: 100, width: 100,
+                      child: Image.asset("assets/logo.png",  )),
+                ],
               ),
+            ),
 
-              SizedBox(height: 20,),
+            ListTile(
+              title: Text("Categories".toUpperCase(),textAlign: TextAlign.center ,style: TextStyle(fontSize: 22.0, color: kBMRactiveCardColor, fontWeight: FontWeight.bold),),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            SizedBox(height: 20.0,),
 
-              ListTile(
-                leading: Icon(
-                  FontAwesomeIcons.home, color: kactiveCardColor,
-                ),
-                title: Text("Home"),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                },
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0, ),
+              tileColor: kactiveCardColor.withOpacity(0.2),
+              leading: Icon(
+                FontAwesomeIcons.home, color: kactiveCardColor, size: 20,
               ),
+              title: Text("Home"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+              },
+            ),
 
 
-              ListTile(
-                leading: Icon(
-                  FontAwesomeIcons.shirt,color: kactiveCardColor,
-                ),
-                title: Text("Elecion"),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Elec()));
-                },
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              leading: Icon(
+                FontAwesomeIcons.shirt,color: kactiveCardColor, size: 20,
               ),
-              
+              title: Text("Fashion"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Fash()));
+              },
+            ),
 
-              ListTile(
-                leading: Icon(
-                  Icons.electrical_services,color: kactiveCardColor,
-                ),
-                title: Text("Electronics"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              tileColor: kactiveCardColor.withOpacity(0.2),
+              leading: Icon(
+                FontAwesomeIcons.plug,color: kactiveCardColor, size: 25,
               ),
+              title: Text("Electronics"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Elec()));
+              },
+            ),
 
 
-              ListTile(
-                leading: Icon(
-                  Icons.directions_bike, color: kactiveCardColor,
-                ),
-                title: Text("Bikes"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              leading: Icon(
+                FontAwesomeIcons.motorcycle, color: kactiveCardColor, size: 22,
               ),
+              title: Text("Bikes"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Bikes()));
+              },
+            ),
 
-              SizedBox(height: 20,),
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
 
-              Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
-
-              ListTile(
-                trailing: Icon(Icons.logout , color: kactiveCardColor,),
-                leading: Icon(
-                  Icons.check_outlined, color: kactiveCardColor,
-                ),
-                title: Text("Check Out"),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Check()));
-                },
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              tileColor: kactiveCardColor.withOpacity(0.2),
+              leading: Icon(
+                FontAwesomeIcons.mobileRetro, color: kactiveCardColor, size: 22,
               ),
+              title: Text("Mobiles"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Mob()));
+              },
+            ),
 
-              Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
 
-              SizedBox(height: 40,),
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              leading: Icon(
+                Icons.pets, color: kactiveCardColor,
+              ),
+              title: Text("Pet"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
 
-              Text("Terms of Service | Privacy Policy" , textAlign: TextAlign.center , style: TextStyle(color: Colors.grey, fontSize: 12),)
-            ],
-          ),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Pets()));
+              },
+            ),
+
+            ListTile(
+              visualDensity: VisualDensity(vertical: -2),
+              contentPadding: EdgeInsets.symmetric(horizontal: 40.0),
+              tileColor: kactiveCardColor.withOpacity(0.2),
+              leading: Icon(
+                Icons.more_rounded, color: kactiveCardColor, size: 19.0,
+              ),
+              title: Text("Others"),
+              trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Others()));
+              },
+            ),
+
+
+            // SizedBox(height: 20,),
+
+            // Text("Terms of Service | Privacy Policy" , textAlign: TextAlign.center , style: TextStyle(color: Colors.grey, fontSize: 12),)
+          ],
         ),
+      ),
 
 
         // ===========================================================

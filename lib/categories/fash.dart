@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_practice/categories/mob.dart';
+import 'package:firebase_practice/categories/pets.dart';
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';
 import 'package:firebase_practice/screens/home.dart';
@@ -8,6 +10,10 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'bikes.dart';
+import 'elec.dart';
+import 'others.dart';
 
 
 class Fash extends StatefulWidget {
@@ -147,7 +153,7 @@ class _FashState extends State<Fash> {
                 title: Text("Electronics"),
                 trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Elec()));
                 },
               ),
 
@@ -161,7 +167,7 @@ class _FashState extends State<Fash> {
                 title: Text("Bikes"),
                 trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Bikes()));
                 },
               ),
 
@@ -176,7 +182,7 @@ class _FashState extends State<Fash> {
                 title: Text("Mobiles"),
                 trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Mob()));
                 },
               ),
 
@@ -191,7 +197,7 @@ class _FashState extends State<Fash> {
                 trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
 
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Check()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pets()));
                 },
               ),
 
@@ -205,7 +211,7 @@ class _FashState extends State<Fash> {
                 title: Text("Others"),
                 trailing: Icon(Icons.chevron_right, color: kactiveCardColor, size: 25.0,),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Check()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Others()));
                 },
               ),
 
