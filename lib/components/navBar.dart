@@ -3,9 +3,9 @@ import 'package:firebase_practice/components/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'category.dart';
-import 'home.dart';
-import 'intro.dart';
+import '../screens/category.dart';
+import '../screens/home.dart';
+import '../screens/intro.dart';
 
 class BNB extends StatefulWidget {
   @override

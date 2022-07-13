@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'components/constants.dart';
 import 'screens/home.dart';
-import 'screens/navBar.dart';
+import 'components/navBar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
