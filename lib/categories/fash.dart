@@ -912,38 +912,7 @@ class _FashState extends State<Fash> {
 
           ]),
         ),
-        bottomNavigationBar: CurvedNavigationBar(
-          // Dependency
-          // animationDuration: Duration(seconds: 1),
-          // animationCurve: Curves.easeInBack,
-
-          buttonBackgroundColor: Colors.white,
-          height: 60,
-          backgroundColor: Colors.green, // dependency
-          items: <Widget>[
-            Icon(
-              FontAwesomeIcons.search,
-              size: 20,
-            ),
-            Icon(
-              Icons.favorite,
-              size: 20,
-            ),
-            Icon(
-              Icons.home,
-              size: 25,
-            ),
-            Icon(
-              FontAwesomeIcons.opencart,
-              size: 25,
-            ),
-            Icon(
-              FontAwesomeIcons.userAlt,
-              size: 20,
-            ),
-          ],
-          onTap: (index) {},
-        ));
+    );
 
 
   }
