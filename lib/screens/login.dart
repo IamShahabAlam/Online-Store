@@ -35,7 +35,7 @@ class Login extends StatelessWidget {
    print("User ID:" + user.user.uid);
     print("**** User is Successfully logged In ****");
     
-   Navigator.of(context).pushNamed("/home");
+   Navigator.of(context).pushNamed("/nav");
    }
   catch (e) {
      print("**** ERROR ****");

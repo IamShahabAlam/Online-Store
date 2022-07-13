@@ -4,7 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice/categories/fash.dart';
 import 'package:firebase_practice/components/conatiners.dart';
 import 'package:firebase_practice/components/constants.dart';
+import 'package:firebase_practice/screens/category.dart';
 import 'package:firebase_practice/screens/check.dart';
+import 'package:firebase_practice/screens/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/rendering.dart';
@@ -22,8 +24,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<String> _options = ["/home", "/login", "/home", "/check", "/home"];
-  int _currentIndex = 2;
 
   final firestore = FirebaseFirestore.instance;
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -111,12 +111,11 @@ class _HomeState extends State<Home> {
     }
 
 
-
-
     return Scaffold(
+      extendBody: true,
       // backgroundColor: Colors.grey[600],
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor:  kactiveCardColor,
         brightness: Brightness.dark,
         elevation: 10,
 
@@ -820,7 +819,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           ),
           trailing: GestureDetector(
-              onTap: () {},
+              onTap: () {Navigator.pushNamed(context, "/cate");},
               child: Text("View More",
                   style: TextStyle(
                     color: Colors.green,
@@ -1222,48 +1221,6 @@ class _HomeState extends State<Home> {
 
 
 
-      bottomNavigationBar: CurvedNavigationBar(
-        // Dependency
-        // animationDuration: Duration(seconds: 1),
-        // animationCurve: Curves.easeInBack,
-        index: _currentIndex,
-        buttonBackgroundColor: Colors.white,
-        // height: 60,
-        backgroundColor: Colors.green, // dependency
-        items: <Widget>[
-
-          GestureDetector(
-            child: Icon(
-              FontAwesomeIcons.search,
-              size: 20,
-            ),
-          ),
-          Icon(
-            Icons.favorite,
-            size: 20,
-          ),
-          Icon(
-            Icons.home,
-            size: 25,
-          ),
-          GestureDetector(
-            onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> Check()));},
-            child: Icon(
-              FontAwesomeIcons.opencart,
-              size: 25,
-            ),
-          ),
-          Icon(
-            FontAwesomeIcons.userAlt,
-            size: 20,
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _currentIndex= index;
-          });
-        },
-      ),
     );
 
 

@@ -43,7 +43,7 @@ class Register extends StatelessWidget {
         print("Username :" + username);
         print("Age :" + age);
         print("**** User is Successfully Registered ****");
-        Navigator.of(context).pushNamed("/home");
+        Navigator.of(context).pushNamed("/nav");
 
       }
       catch(e){

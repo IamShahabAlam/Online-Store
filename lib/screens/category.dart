@@ -6,6 +6,7 @@ import 'package:firebase_practice/categories/fash.dart';
 import 'package:firebase_practice/categories/mob.dart';
 import 'package:firebase_practice/categories/others.dart';
 import 'package:firebase_practice/categories/pets.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:firebase_practice/components/constants.dart';
 import 'package:firebase_practice/screens/check.dart';

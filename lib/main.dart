@@ -1,6 +1,7 @@
 
 import 'dart:ui' as ui;
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firebase_practice/screens/category.dart';
 import 'package:firebase_practice/screens/intro.dart';
 import 'package:firebase_practice/screens/login.dart';
 import 'package:firebase_practice/screens/register.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'components/constants.dart';
 import 'screens/home.dart';
+import 'screens/navBar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -80,8 +82,8 @@ class MyApp extends StatelessWidget {
                 "/reg" : (context) => Register(),
                 "/home" : (context) => Home(),
                 "/intro" : (context) => Intro(),
-                "/wish" : (context) => Home(),
-                "/check" : (context) => Home(),
+                "/nav" : (context) => BNB(),
+                "/cate" : (context) => Cate(),
                 "/profile" : (context) => Home(),
 
 
