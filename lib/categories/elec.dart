@@ -1,21 +1,25 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:appUp_one/categories/mob.dart';
-import 'package:appUp_one/categories/pets.dart';
 import 'package:appUp_one/components/constants.dart';
 import 'package:appUp_one/components/navBar.dart';
-import 'package:appUp_one/screens/check.dart';
-import 'package:appUp_one/screens/home.dart';
+import 'package:appUp_one/products/ac.dart';
+import 'package:appUp_one/products/blend.dart';
+import 'package:appUp_one/products/ref.dart';
+import 'package:appUp_one/products/tv.dart';
+import 'package:appUp_one/products/vac.dart';
+import 'package:appUp_one/products/washing.dart';
 import 'package:appUp_one/screens/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'bikes.dart';
-import 'elec.dart';
+import 'package:appUp_one/categories/bikes.dart';
+import 'package:appUp_one/categories/mob.dart';
+import 'package:appUp_one/categories/pets.dart';
 import 'fash.dart';
 import 'others.dart';
+import 'bikes.dart';
 
 class Elec extends StatefulWidget {
   @override
@@ -36,7 +40,7 @@ class _ElecState extends State<Elec> {
     "Haier Inverter AC",
     "Orient LED TV",
     "Haier Refrigerator",
-    "Dawlence Washingmachine",
+    "Dawlence Machine",
     "Westpoint Blender",
     "WP Vaccuum Cleaner"
   ];
@@ -49,15 +53,15 @@ class _ElecState extends State<Elec> {
     "(04 Reviews)",
     "(110 Reviews)"
   ];
- //
- // dynamic itemPages = [
- //    AC(),
- //    AC(),
- //    AC(),
- //    AC(),
- //    AC(),
- //    AC()
- //  ];
+
+ dynamic itemPages = [
+    AC(),
+    TV(),
+    Ref(),
+    Washing(),
+    Blend(),
+    Vac(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -234,7 +238,10 @@ class _ElecState extends State<Elec> {
       ),
 
 
-        // ===========================================================
+
+
+
+      // ===========================================================
 
         body: SingleChildScrollView(
           child: Column(
@@ -500,14 +507,14 @@ class _ElecState extends State<Elec> {
                     children: [
                       GestureDetector(
                         onTap: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => itemPages[index]),
-            // );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => itemPages[index]),
+            );
           },
                         child: Container(
                           width: MediaQuery.of(context).size.width / 2.2,
-                          height: MediaQuery.of(context).size.height / 5.5,
+                       height: MediaQuery.of(context).size.height / 6.0,
                           margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             boxShadow: [
@@ -578,8 +585,6 @@ class _ElecState extends State<Elec> {
 
           ]),
         ),
-    );
-
-
+ );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:appUp_one/screens/last.dart';
 import 'package:flutter/material.dart';
 
+import 'last.dart';
 import 'login.dart';
 
 class Check extends StatefulWidget {

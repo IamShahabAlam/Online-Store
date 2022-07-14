@@ -1,3 +1,15 @@
+import 'package:appUp_one/categories/bikes.dart';
+import 'package:appUp_one/categories/elec.dart';
+import 'package:appUp_one/categories/mob.dart';
+import 'package:appUp_one/categories/others.dart';
+import 'package:appUp_one/categories/pets.dart';
+import 'package:appUp_one/products/asus.dart';
+import 'package:appUp_one/products/band.dart';
+import 'package:appUp_one/products/bat.dart';
+import 'package:appUp_one/products/bravo.dart';
+import 'package:appUp_one/products/motog8.dart';
+import 'package:appUp_one/products/ybr.dart';
+import 'package:appUp_one/screens/search.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -97,6 +109,15 @@ class _HomeState extends State<Home> {
     "(21 Reviews)"
   ];
 
+  dynamic itemPages = [
+    YBR(),
+    Motog8(),
+    Asus(),
+    Bat(),
+    Bravo(),
+    Band(),
+  ];
+
 
   Widget build(BuildContext context) {
 
@@ -125,11 +146,20 @@ class _HomeState extends State<Home> {
             ),
         ),
         actions: [
+
+          GestureDetector(
+            onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => Search()), );},
+            child: Icon(Icons.search , color: Colors.white,),
+          ),
+
+
           FlatButton(
               padding: EdgeInsets.only(left: 50),
               textColor: Colors.black,
               onPressed: logout,
-              child: Icon(Icons.power_settings_new))
+              child: Icon(Icons.power_settings_new)),
+
+
         ],
       ),
 
@@ -177,8 +207,6 @@ class _HomeState extends State<Home> {
                 Navigator.pop(context);
               },
             ),
-// Divider(height: 0.5 , thickness: 1.0, color: kactiveCardColor,),
-
 
             ListTile(
               leading: Icon(Icons.mail, color: kactiveCardColor,),
@@ -187,8 +215,6 @@ class _HomeState extends State<Home> {
                 Navigator.pop(context);
               },
             ),
-
-// Divider(height: 0.5,thickness: 1.0, color: kactiveCardColor,),
 
             ListTile(
               leading: Icon(FontAwesomeIcons.calendarDays, color: kactiveCardColor,),
@@ -237,7 +263,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           ),
           trailing: GestureDetector(
-              onTap: () {},
+              onTap: () {Navigator.pushNamed(context, "/cate");},
               child: Text("View More",
                   style: TextStyle(
                     color: Colors.green,
@@ -835,7 +861,7 @@ class _HomeState extends State<Home> {
               children: [
                 // 1st Category
                 GestureDetector(
-                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Elec()));},
                   child: Container(
                     padding: EdgeInsets.only(left: 12, top: 6),
                     height: MediaQuery.of(context).size.height / 11,
@@ -928,7 +954,7 @@ class _HomeState extends State<Home> {
 
                 // 3rd Category
                 GestureDetector(
-                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Mob()));},
                   child: Container(
                     padding: EdgeInsets.only(left: 12, top: 6),
                     height: MediaQuery.of(context).size.height / 11,
@@ -973,7 +999,7 @@ class _HomeState extends State<Home> {
 
                 // 4th Category
                 GestureDetector(
-                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Bikes()));},
                   child: Container(
                     padding: EdgeInsets.only(left: 12, top: 6),
                     height: MediaQuery.of(context).size.height / 11,
@@ -1018,7 +1044,7 @@ class _HomeState extends State<Home> {
 
                 // 5th Category
                 GestureDetector(
-                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+                  onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Pets()));},
                   child: Container(
                     padding: EdgeInsets.only(left: 12, top: 6),
                     height: MediaQuery.of(context).size.height / 11,
@@ -1063,7 +1089,7 @@ class _HomeState extends State<Home> {
 
                 // 6th Category
                 GestureDetector(
-                  onTap:() {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+                  onTap:() {Navigator.push(context, MaterialPageRoute(builder: (context)=> Others()));},
                   child: Container(
                     padding: EdgeInsets.only(left: 12, top: 6),
                     height: MediaQuery.of(context).size.height / 11,
@@ -1117,7 +1143,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           ),
           trailing: GestureDetector(
-              onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Fash()));},
+              onTap: () {Navigator.pushNamed(context, "/cate");},
               child: Text("View More",
                   style: TextStyle(
                     color: Colors.green,
@@ -1132,87 +1158,90 @@ class _HomeState extends State<Home> {
           crossAxisSpacing: 5,
           mainAxisSpacing: 8,
           children: List.generate(itemNames.length, (index) {
-            return Container(
-              height: MediaQuery.of(context).size.height / 3,
-              width: MediaQuery.of(context).size.width / 2,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.green[100],
-                      blurRadius: 2,
-                      spreadRadius: 0.7,
-                      offset: Offset(0, 2),
+            return GestureDetector(
+              onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> itemPages[index]));},
+              child: Container(
+                height: MediaQuery.of(context).size.height / 3,
+                width: MediaQuery.of(context).size.width / 2,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.green[100],
+                        blurRadius: 2,
+                        spreadRadius: 0.7,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(11)),
+                child: Column(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2.2,
+                      height: MediaQuery.of(context).size.height / 5.5,
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 6,
+                            spreadRadius: 2,
+                            offset: Offset(0, 2),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(8.0),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          alignment: Alignment(0, 0),
+                          image: NetworkImage(itemPics[index]),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 3),
+                    Text(
+                      itemNames[index],
+                      style: TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 3),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Text("   5.0", style: TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                    SizedBox(height: 3),
+                    Text(
+                      itemReviews[index],
+                      style: TextStyle(fontSize: 11),
                     ),
                   ],
-                  borderRadius: BorderRadius.circular(11)),
-              child: Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width / 2.2,
-                    height: MediaQuery.of(context).size.height / 5.5,
-                    margin: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 6,
-                          spreadRadius: 2,
-                          offset: Offset(0, 2),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        alignment: Alignment(0, 0),
-                        image: NetworkImage(itemPics[index]),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 3),
-                  Text(
-                    itemNames[index],
-                    style: TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 3),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 15,
-                      ),
-                      Text("   5.0", style: TextStyle(fontSize: 12)),
-                    ],
-                  ),
-                  SizedBox(height: 3),
-                  Text(
-                    itemReviews[index],
-                    style: TextStyle(fontSize: 11),
-                  ),
-                ],
+                ),
               ),
             );
           }),

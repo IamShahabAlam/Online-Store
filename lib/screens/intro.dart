@@ -111,7 +111,7 @@ class _IntroState extends State<Intro> {
                 ListTile(
                   onTap: () {},
                   leading: Icon(FontAwesomeIcons.mobileScreen, color: kactiveCardColor, size: 20.0,),
-                  title: Text('Up App Competition 2022',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17.0),),
+                  title: Text('App Up Competition 2022',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17.0),),
                 ),
 
                 Spacer(),
@@ -176,7 +176,7 @@ class _IntroState extends State<Intro> {
                 style: TextStyle(fontSize: 15, height: 1.35 ), textAlign: TextAlign.justify,),
             ),
 
-// BMI Button
+//  Button
             HomeBtn(
               heightB: 0.08,
               widthB: 0.6,
@@ -187,7 +187,7 @@ class _IntroState extends State<Intro> {
               lastClr : kBMRactiveCardColor,
             ),
 
-// BMR Button
+//  Button
             HomeBtn(
               heightB: 0.08,
               widthB: 0.6,

@@ -1,22 +1,26 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:appUp_one/categories/mob.dart';
 import 'package:appUp_one/categories/pets.dart';
 import 'package:appUp_one/components/constants.dart';
 import 'package:appUp_one/components/navBar.dart';
+import 'package:appUp_one/products/moto1.dart';
+import 'package:appUp_one/products/motog8.dart';
+import 'package:appUp_one/products/nokia.dart';
+import 'package:appUp_one/products/redmi.dart';
+import 'package:appUp_one/products/xz1.dart';
+import 'package:appUp_one/products/xz3.dart';
 import 'package:appUp_one/screens/check.dart';
 import 'package:appUp_one/screens/home.dart';
 import 'package:appUp_one/screens/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 import 'bikes.dart';
 import 'elec.dart';
 import 'fash.dart';
 import 'others.dart';
-
-
 
 class Mob extends StatefulWidget {
   @override
@@ -50,7 +54,14 @@ class _MobState extends State<Mob> {
     "(04 Reviews)",
     "(110 Reviews)"
   ];
-
+  dynamic itemPages = [
+    XZ1(),
+    Moto1(),
+    Motog8(),
+    Nokia(),
+    Redmi(),
+    XZ3(),
+  ];
   @override
   Widget build(BuildContext context) {
 
@@ -226,7 +237,10 @@ class _MobState extends State<Mob> {
       ),
 
 
-        // ===========================================================
+
+
+
+      // ===========================================================
 
         body: SingleChildScrollView(
           child: Column(
@@ -490,24 +504,32 @@ class _MobState extends State<Mob> {
                       borderRadius: BorderRadius.circular(11)),
                   child: Column(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width / 2.2,
-                        height: MediaQuery.of(context).size.height / 5.5,
-                        margin: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 6,
-                              spreadRadius: 2,
-                              offset: Offset(0, 2),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(8.0),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            alignment: Alignment(0, 0),
-                            image: NetworkImage(itemPics[index]),
+                      GestureDetector(
+                        onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => itemPages[index]),
+            );
+          },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 2.2,
+                          height: MediaQuery.of(context).size.height / 6.0,
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 6,
+                                spreadRadius: 2,
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8.0),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              alignment: Alignment(0, 0),
+                              image: NetworkImage(itemPics[index]),
+                            ),
                           ),
                         ),
                       ),
@@ -562,8 +584,6 @@ class _MobState extends State<Mob> {
 
           ]),
         ),
-    );
-
-
+ );
   }
 }

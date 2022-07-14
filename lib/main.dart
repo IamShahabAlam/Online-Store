@@ -4,7 +4,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:appUp_one/screens/category.dart';
 import 'package:appUp_one/screens/intro.dart';
 import 'package:appUp_one/screens/login.dart';
-import 'package:appUp_one/screens/profile.dart';
+import 'package:appUp_one/screens/admin.dart';
 import 'package:appUp_one/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
                 "/intro" : (context) => Intro(),
                 "/nav" : (context) => BNB(),
                 "/cate" : (context) => Cate(),
-                "/prof" : (context) => Profile(),
+                "/admin" : (context) => Admin(),
 
 
               }
