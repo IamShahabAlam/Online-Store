@@ -43,14 +43,14 @@ class _ProfileState extends State<Profile> {
                 },
                 child: Container(
                   // padding: EdgeInsets.all(5.0),
-                  height: 50.0,
-                  width: 50.0,
+                  height: 40.0,
+                  width: 40.0,
                   decoration: new BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: new BorderRadius.all(Radius.circular(50))),
                   child: CircleAvatar(
                       radius: 50,
-                      backgroundImage: NetworkImage(data[i]['pic'] + "$i") ,backgroundColor: Colors.transparent,   ),
+                      backgroundImage: NetworkImage(data[i]['pic'] + "$i") ,backgroundColor: Colors.green, ),
                 ),
               ),
               title: Text(
@@ -119,10 +119,10 @@ class _ProfileState extends State<Profile> {
               SingleChildScrollView(
                 child: Container(
                   height: _h*0.4,
-                  width: _w*0.8,
+                  width: _w*1,
                   child: CommentBox(
                     userImage:
-                    "https://e7.pngegg.com/pngimages/726/872/png-clipart-shopping-cart-with-food-products-illustration-shopping-cart-objects-shopping-carts.png",
+                    "https://e7.pngegg.com/pngimages/726/872/png-clipart-shopping-cart-with-food-products-illustration-shopping-cart-objects-shopping-carts.png" ,
                     child: commentChild(filedata),
                     labelText: 'Give a Feedback...',
                     withBorder: false,
@@ -134,7 +134,7 @@ class _ProfileState extends State<Profile> {
                     var value = {
                     'name': 'User',
                     'pic':
-                    "https://e7.pngegg.com/pngimages/726/872/png-clipart-shopping-cart-with-food-products-illustration-shopping-cart-objects-shopping-carts.png",
+                    'https://e7.pngegg.com/pngimages/726/872/png-clipart-shopping-cart-with-food-products-illustration-shopping-cart-objects-shopping-carts.png',
                     'message': commentController.text
                     };
                     filedata.insert(0, value);

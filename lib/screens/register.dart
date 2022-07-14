@@ -24,9 +24,6 @@ class Register extends StatelessWidget {
       FirebaseAuth auth = FirebaseAuth.instance;
       FirebaseFirestore db = FirebaseFirestore.instance;
 
-      // final FirebaseUser user = await auth.currentUser();
-      final User users = auth.currentUser;
-      final uid = users.uid;
 
       final String username = usernameController.text;
       final String email = emailController.text;
