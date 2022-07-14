@@ -59,7 +59,7 @@ Widget build(BuildContext context) {
 				delegate: CustomSearchDelegate()
 			);
 			},
-			icon: const Icon(Icons.search_sharp, size: 35,)
+			icon: const Icon(Icons.search_sharp, size: 35 , color: Colors.black,)
 		)
 		],
 	),
@@ -155,7 +155,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: Icon(Icons.clear, color: Colors.black,),
       ),
     ];
   }
@@ -167,7 +167,7 @@ class CustomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: Icon(Icons.arrow_back, color: Colors.black,),
     );
   }
  

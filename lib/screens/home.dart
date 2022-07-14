@@ -154,7 +154,7 @@ class _HomeState extends State<Home> {
 
 
           FlatButton(
-              padding: EdgeInsets.only(left: 50),
+              // padding: EdgeInsets.only(left: 50),
               textColor: Colors.black,
               onPressed: logout,
               child: Icon(Icons.power_settings_new)),
