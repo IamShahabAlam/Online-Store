@@ -6,6 +6,7 @@ import 'package:appUp_one/components/constants.dart';
 import 'package:appUp_one/components/navBar.dart';
 import 'package:appUp_one/screens/category.dart';
 import 'package:appUp_one/screens/intro.dart';
+import 'package:appUp_one/screens/post_product.dart';
 import 'package:clippy_flutter/buttcheek.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:comment_box/comment/comment.dart';
@@ -178,9 +179,9 @@ class _AdminState extends State<Admin> {
             HomeBtn(
               heightB: 0.055,
               widthB: 0.35,
-              name: "Products",
+              name: "Post Ad",
               t_margin: 0.04,
-              onpressed:  (){ Navigator.push(context, MaterialPageRoute(builder: (context) => Cate(), ));},
+              onpressed:  (){ Navigator.push(context, MaterialPageRoute(builder: (context) => Post_Product(), ));},
               lastClr: kactiveCardColor,
               firstClr: kBMRactiveCardColor,
             ),

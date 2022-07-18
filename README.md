@@ -1,4 +1,4 @@
-# firebase_practice
+# Online Store
 
 A new Flutter project.
 
