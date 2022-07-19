@@ -4,7 +4,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-class Post_Product extends StatelessWidget {
+class Post_Product extends StatefulWidget {
+
+  @override
+  _Post_ProductState createState() => _Post_ProductState();
+}
+
+class _Post_ProductState extends State<Post_Product> {
+
+  String dropdownValue;
+
+  var items = [
+    "Fashion", "Electronics" , "Mobiles" , "Bikes" , "Pets" , "others"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +25,11 @@ class Post_Product extends StatelessWidget {
     final _w = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: kBG,
       body:
-      Column(
+      Column( crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+// ===============================  Cover =========================================
           Stack(
             children: [
               ButtCheek(
@@ -58,9 +72,35 @@ class Post_Product extends StatelessWidget {
               ),
             ],
           ),
-// =============================================================================================
+
+// ================================  Fields ========================================
+// Title
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20.0 ,horizontal: 20.0),
+            child: Text("Ad Details".toUpperCase() ,textAlign: TextAlign.left ,style: TextStyle(color: kBMRactiveCardColor, fontSize: 25.0 , fontWeight: FontWeight.bold), ),
+          ),
+
+          DropdownButton(
+            value: dropdownValue,
+            hint: Text("Categories"),
+            items: items.map((String items) {
+              return DropdownMenuItem(
+                value: items,
+                  child: Text(items),);
+                }).toList(),
+            onChanged: (String newValue){
+              setState((){
+                dropdownValue = newValue;
+              });
+            },
+          ),
 
 
+
+// ================================ X  ========================================
+// ================================  X ========================================
+// ================================  X ========================================
+// ================================  X ========================================
 
         ],
       ),
