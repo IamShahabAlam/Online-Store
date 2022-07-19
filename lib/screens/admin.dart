@@ -177,10 +177,10 @@ class _AdminState extends State<Admin> {
             ),
 
             HomeBtn(
-              heightB: 0.055,
-              widthB: 0.35,
+              heightB: 0.06,
+              widthB: 0.38,
               name: "Post Ad",
-              t_margin: 0.04,
+              t_margin: 0.045,
               onpressed:  (){ Navigator.push(context, MaterialPageRoute(builder: (context) => Post_Product(), ));},
               lastClr: kactiveCardColor,
               firstClr: kBMRactiveCardColor,
