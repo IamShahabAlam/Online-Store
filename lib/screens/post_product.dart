@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:flutter/painting.dart';
+
 class Post_Product extends StatefulWidget {
 
   @override
@@ -84,20 +86,27 @@ class _Post_ProductState extends State<Post_Product> {
 // Categories
 
           Container(
-            margin: EdgeInsets.only(left: 25.0),
+            margin: EdgeInsets.only(left: 25.0 , top: 15.0, bottom: 10.0),
             child: Text("Select Categories" , style: TextStyle(color: Colors.grey , fontSize: 14.0),) ,),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:30.0),
+            Container(
+              margin: EdgeInsets.only(left:30.0, right: 30.0 , bottom: 20.0),
+              padding:  EdgeInsets.only(left:20.0,),
+              decoration: BoxDecoration(
+                color: Color(0xFFd8f2d9) ,
+                borderRadius: BorderRadius.circular(20.0),
+                border: Border.all(color: kBMRactiveCardColor , ),
+              ),
               child: DropdownButton(
-
-                dropdownColor: kBMRactiveCardColor,
+                // iconEnabledColor:  Color(0xFFd8f2d9) ,
+                focusColor:  Color(0xFFd8f2d9) ,
+                dropdownColor: Color(0xFFd8f2d9),
                 disabledHint: Text("Select Categories"),
                 itemHeight: 60.0,
                 icon: Icon(Icons.keyboard_arrow_down),
                 iconSize: 30.0,
                 value: dropdownValue,
-                hint: Container(margin: EdgeInsets.only(right: _w*0.5), child: Text("Categories")),
+                hint: Container(margin: EdgeInsets.only(right: _w*0.46), child: Text("Categories" , )),
                 items: items.map((String items) {
                   return DropdownMenuItem(
                     value: items,
@@ -112,23 +121,101 @@ class _Post_ProductState extends State<Post_Product> {
             ),
 
 // Title
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0 ,vertical: 20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  helperText: "Key Feature of your product",
-                  hintText: "Ad Title",
-                  labelText: "Title",
-
-                ),
-              ),
+            PostField(
+              maxLen: 70,
+              maxLines: 1 ,
+              height: 20 ,
+              label: "     Title" ,
+              helper: " Mention the key features of your item" ,
+              hint: "     Ad Title" ,
             ),
+
+
+//  Description
+            PostField(
+              maxLines: 10 ,
+              height: 40,
+              maxLen: 2000,
+              hint:  "    Ad Description",
+              helper: " Include quality, features and warranty",
+              label:  "      Description",
+            ),
+
+// Brand
+            PostField(
+              maxLen: 50,
+              maxLines: 1 ,
+              height: 20 ,
+              label: "     Brand" ,
+              helper: " Mention the Manufactures of your item" ,
+              hint: "     Ad Brand" ,
+            ),
+
+ // Price
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20.0 ,horizontal: 20.0),
+              child: Text("Set Price".toUpperCase() ,textAlign: TextAlign.left ,style: TextStyle(color: kBMRactiveCardColor, fontSize: 25.0 , fontWeight: FontWeight.bold), ),
+            ),
+
+            PostField(
+              preText: "   Rs  |  ",
+              maxLines: 1 ,
+              height: 20 ,
+              label: "    Price" ,
+              helper: " Price in Pakistani Rupees" ,
+              hint: "     Price" ,
+            ),
+
+
+// Pictures
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20.0 ,horizontal: 20.0),
+              child: Text("upload pictures".toUpperCase() ,textAlign: TextAlign.left ,style: TextStyle(color: kBMRactiveCardColor, fontSize: 25.0 , fontWeight: FontWeight.bold), ),
+            ),
+
 // ================================ X  ========================================
 // ================================  X ========================================
 // ================================  X ========================================
 // ================================  X ========================================
 
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class PostField extends StatelessWidget {
+
+   PostField({this.height,this.helper,this.maxLen,this.hint,this.label,this.maxLines, this.preText});
+   final String label , hint  , helper , preText;
+   final int  maxLen , maxLines ;
+   final double height ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30.0 ,vertical: 15.0),
+      child: TextField(
+        minLines: 1,
+        maxLines: maxLines,
+        cursorColor: kactiveCardColor,
+        maxLength: maxLen,
+        textAlign: TextAlign.start,
+        keyboardType: TextInputType.multiline,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: kactiveCardColor.withOpacity(0.2),
+          prefixText: preText,
+          isDense: true,
+          contentPadding: EdgeInsets.symmetric(vertical: height),
+          helperText: helper,
+          hintText: hint,
+          labelText: label,
+          labelStyle: TextStyle(color: kBMRactiveCardColor),
+          focusColor: kactiveCardColor,
+          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0), borderSide: BorderSide(color: kBMRactiveCardColor)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0) , borderSide: BorderSide(color: kactiveCardColor))
         ),
       ),
     );
