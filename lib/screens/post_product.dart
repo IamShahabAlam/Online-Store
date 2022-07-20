@@ -1,3 +1,4 @@
+import 'package:appUp_one/components/buttons.dart';
 import 'package:appUp_one/components/constants.dart';
 import 'package:clippy_flutter/buttcheek.dart';
 import 'package:flutter/cupertino.dart';
@@ -42,7 +43,10 @@ class _Post_ProductState extends State<Post_Product> {
       backgroundColor: kBG,
       body:
       SingleChildScrollView(
-        child: Column( crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          textDirection: TextDirection. ltr,
+
           children: [
 
 // ===============================  Cover =========================================
@@ -103,6 +107,7 @@ class _Post_ProductState extends State<Post_Product> {
             child: Text("Select Categories" , style: TextStyle(color: Colors.grey , fontSize: 14.0),) ,),
 
             Container(
+              width: double.infinity,
               margin: EdgeInsets.only(left:30.0, right: 30.0 , bottom: 20.0),
               padding:  EdgeInsets.only(left:20.0,),
               decoration: BoxDecoration(
@@ -183,12 +188,12 @@ class _Post_ProductState extends State<Post_Product> {
 
 // Pictures
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 10.0 ,horizontal: 20.0),
+              margin: const EdgeInsets.symmetric(vertical: 20.0 ,horizontal: 20.0),
               child: Text("upload pictures".toUpperCase() ,textAlign: TextAlign.left ,style: TextStyle(color: kBMRactiveCardColor, fontSize: 25.0 , fontWeight: FontWeight.bold), ),
             ),
 
             GridView.count(
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 20.0),
               crossAxisCount: 4,
               crossAxisSpacing: 15.0,
               mainAxisSpacing: 15.0,
@@ -206,7 +211,27 @@ class _Post_ProductState extends State<Post_Product> {
               )
             ),
 
-// ================================  X ========================================
+
+// ================================  Button  ========================================
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Center(
+                child: HomeBtn(
+                  heightB: 0.07,
+                  widthB: 0.4,
+                  name: "Sell",
+                  t_margin: 0.045,
+                  onpressed:  (){
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Post_Product(), ));
+                  },
+                  lastClr: kactiveCardColor,
+                  firstClr: kBMRactiveCardColor,
+                ),
+              ),
+            ),
+
+
 // ================================  X ========================================
 // ================================  X ========================================
 
