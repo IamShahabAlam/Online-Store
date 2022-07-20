@@ -20,6 +20,18 @@ class _Post_ProductState extends State<Post_Product> {
     "Fashion", "Electronics" , "Mobiles" , "Bikes" , "Pets" , "Others"
   ];
 
+  final List<IconData> iconsList = [
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+    Icons.add_a_photo_outlined,
+
+  ];
+
   @override
   Widget build(BuildContext context) {
 
@@ -32,6 +44,7 @@ class _Post_ProductState extends State<Post_Product> {
       SingleChildScrollView(
         child: Column( crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+
 // ===============================  Cover =========================================
             Stack(
               children: [
@@ -166,14 +179,33 @@ class _Post_ProductState extends State<Post_Product> {
               hint: "     Price" ,
             ),
 
+// ================================ Picture  ========================================
 
 // Pictures
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 20.0 ,horizontal: 20.0),
+              margin: const EdgeInsets.symmetric(vertical: 10.0 ,horizontal: 20.0),
               child: Text("upload pictures".toUpperCase() ,textAlign: TextAlign.left ,style: TextStyle(color: kBMRactiveCardColor, fontSize: 25.0 , fontWeight: FontWeight.bold), ),
             ),
 
-// ================================ X  ========================================
+            GridView.count(
+              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              crossAxisCount: 4,
+              crossAxisSpacing: 15.0,
+              mainAxisSpacing: 15.0,
+              shrinkWrap: true,
+              children: List.generate(iconsList.length, (index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xffdff6e0),
+                    border: Border.all(color: kBMRactiveCardColor),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Icon(iconsList[index] , color: kBMRactiveCardColor,),
+                );
+              }
+              )
+            ),
+
 // ================================  X ========================================
 // ================================  X ========================================
 // ================================  X ========================================
