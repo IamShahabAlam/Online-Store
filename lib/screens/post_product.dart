@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:flutter/painting.dart';
+import 'package:motion_toast/motion_toast.dart';
+import 'package:motion_toast/resources/arrays.dart';
 
 class Post_Product extends StatefulWidget {
 
@@ -198,6 +200,7 @@ class _Post_ProductState extends State<Post_Product> {
               crossAxisSpacing: 15.0,
               mainAxisSpacing: 15.0,
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: List.generate(iconsList.length, (index) {
                 return Container(
                   decoration: BoxDecoration(
@@ -223,7 +226,20 @@ class _Post_ProductState extends State<Post_Product> {
                   name: "Sell",
                   t_margin: 0.045,
                   onpressed:  (){
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Post_Product(), ));
+                    MotionToast.success(                   // (error, info , success , warning , delete)
+                      width: _w*0.8,
+                      height: _h*0.12,
+                      title: Text("Success", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      description: Text("Your Ad will be Posted Soon.", style: TextStyle(fontSize: 16,),),
+                      animationType: AnimationType.fromTop,
+                      position: MotionToastPosition.top,
+                      borderRadius: 10.0,
+                      iconSize: 45.0,
+                      barrierColor: Colors.black26,
+                      toastDuration: Duration(seconds: 2),
+                      layoutOrientation: ToastOrientation.ltr,
+                      // animationCurve: Curves.elasticOut
+                    ).show(context);
                   },
                   lastClr: kactiveCardColor,
                   firstClr: kBMRactiveCardColor,
