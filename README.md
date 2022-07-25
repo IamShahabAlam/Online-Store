@@ -1,6 +1,6 @@
 # Online Store
 
-A new Flutter project.
+A  Flutter project for App Up Competiton 2022.
 
 ## Getting Started
 
