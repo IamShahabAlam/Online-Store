@@ -1,6 +1,8 @@
 # Online Store
 
 A  Flutter project for App Up Competiton 2022.
+Inter University Mobile Application Development Competition.
+Flutter 2.0.6.
 
 ## Getting Started
 
