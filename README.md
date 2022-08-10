@@ -61,7 +61,7 @@ Flutter Project (Flutter 2.0.6)
             </div>
             
 ### For Assistance
-- fOLLOW <a href="https://github.com/IamShahabAlam"> hERE </a> <br/>
+- FOLLOW <a href="https://github.com/IamShahabAlam"> hERE </a> <br/>
 
 > :blue_heart: &nbsp; Fluttering
 
