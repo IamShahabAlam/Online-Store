@@ -8,6 +8,9 @@ E-Commerce Flutter Project (Flutter 2.0.6)
 - Email Signup
 - Email Login  
 - 40+ Screens
+- Admin Panel
+- Feedbacks
+- Ratings
 
 ## Demonstration
 
