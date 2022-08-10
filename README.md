@@ -14,9 +14,9 @@ E-Commerce Flutter Project (Flutter 2.0.6)
 <!-- COMING SOON :screwdriver: :placard:	  -->
 
 
-<img align="left" height="100px" width="80px"  src="https://user-images.githubusercontent.com/82330891/183980174-b39f3ee1-4da9-4295-a39e-f20b7b0212a9.png" />
+<img  height="100px" width="80px"  src="https://user-images.githubusercontent.com/82330891/183980174-b39f3ee1-4da9-4295-a39e-f20b7b0212a9.png" />
 
-<img  height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980651-136cc118-3921-4256-94bb-faff212d5531.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980651-136cc118-3921-4256-94bb-faff212d5531.png" />
 <img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980715-30229fa8-7a58-4369-b3e6-cccdfb34b895.png" />
 <img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980812-56edb2c0-cf72-46dd-96ea-186cef0cbeeb.png" />
 <img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980885-90de34c3-3179-47d4-a2ec-ca2e69481c46.png" />
