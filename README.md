@@ -1,11 +1,11 @@
 # Online Store
 
-Flutter Project (Flutter 2.0.6)
+E-Commerce Flutter Project (Flutter 2.0.6)
 
 ## Features
 
 - Firebase Authentication
-- Email Signupa
+- Email Signup
 - Email Login  
 - 40+ Screens
 
@@ -15,13 +15,18 @@ Flutter Project (Flutter 2.0.6)
 
 
 <img align="left"  height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980174-b39f3ee1-4da9-4295-a39e-f20b7b0212a9.png" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164298980-3a97d35d-b985-4e41-b720-54dadf39a36c.jpg" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164298982-f4b9e5d7-8a91-4945-b347-a05347330e64.jpg" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164298986-92f21a7e-fe9c-474a-8949-44b55d641c48.jpg" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164532202-c14995ee-d9bb-44e0-96a9-4436699abe19.jpg" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164532208-8722e46c-727d-485a-8415-c99143ee30ea.jpg" />
-<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164532210-41df6c91-387d-486a-8946-66e9c22bde06.jpg" />
-<img  height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/164532212-f6f06c06-ca03-4520-b91c-bbeebce52381.jpg" />  <br/>
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980651-136cc118-3921-4256-94bb-faff212d5531.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980715-30229fa8-7a58-4369-b3e6-cccdfb34b895.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980812-56edb2c0-cf72-46dd-96ea-186cef0cbeeb.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183980885-90de34c3-3179-47d4-a2ec-ca2e69481c46.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183981150-596847bb-57de-40a6-a710-983dcaf06201.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183981220-36645bff-8b6b-4eee-aa4f-9cdeaed15174.png" />
+<img align="left" height="600px" width="300px" src="https://user-images.githubusercontent.com/82330891/183981306-9281bc86-7b5e-4006-8215-fdc24be495c0.png" />
+<!-- <img align="left" height="600px" width="300px" src="" />
+<img align="left" height="600px" width="300px" src="" />
+<img  height="600px" width="300px" src="" />  <br/> -->
+
+
 
 
 <!-- <img align="left" height="600px" width="300px" src="" /> -->
